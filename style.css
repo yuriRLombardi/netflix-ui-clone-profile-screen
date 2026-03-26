@@ -1,0 +1,81 @@
+/* Estilos inspirados na Netflix */
+
+body {
+    background-color: #000; /* Fundo preto escuro típico da Netflix */
+    color: #fff; /* Texto branco para contrastar com o fundo escuro */
+    font-family: Arial, sans-serif; /* Fonte simples e legível */
+    margin: 0; /* Remove margens padrão do navegador */
+    padding: 0; /* Remove espaçamento interno padrão */
+    height: 100vh; /* Ocupa 100% da altura da viewport */
+    display: flex; /* Usa flexbox para centralizar conteúdo */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    text-align: center; /* Centraliza o texto */
+}
+
+main {
+    max-width: 800px; /* Limita a largura máxima do conteúdo */
+    width: 100%; /* Ocupa toda largura disponível até o limite */
+    padding: 20px; /* Espaçamento interno ao redor do conteúdo */
+}
+
+h1 {
+    font-size: 3rem; /* Tamanho grande de título */
+    margin-bottom: 2rem; /* Espaçamento abaixo do título */
+    font-weight: 300; /* Peso de fonte leve para estética moderna */
+}
+
+.profiles {
+    display: flex; /* Layout flexível para exibir perfis em linha */
+    justify-content: center; /* Centraliza os itens no container */
+    gap: 2rem; /* Espaço uniforme entre os perfis */
+    flex-wrap: wrap; /* Permite quebra de linha em telas menores */
+}
+
+.profile {
+    text-decoration: none; /* Remove sublinhado do link */
+    color: #fff; /* Garante texto branco no link */
+    transition: transform 0.3s ease; /* Animação suave ao aplicar transformações */
+    display: block; /* Garante comportamento de bloco para área clicável */
+}
+
+.profile:hover {
+    transform: scale(1.1); /* Aumenta ligeiramente o perfil ao passar o mouse */
+}
+
+figure {
+    margin: 0; /* Remove margens padrão do elemento figure */
+}
+
+img {
+    width: 120px; /* Largura fixa da imagem de perfil */
+    height: 120px; /* Altura fixa da imagem de perfil */
+    border-radius: 50%; /* Deixa a imagem em formato circular */
+    object-fit: cover; /* Corta e ajusta a imagem para preencher o container */
+    border: 3px solid transparent; /* Cria borda invisível inicial para animação */
+    transition: border-color 0.3s ease; /* Suaviza mudança de cor da borda */
+}
+
+.profile:hover img {
+    border-color: #fff; /* Borda branca ao passar o mouse */
+}
+
+figcaption {
+    margin-top: 0.5rem; /* Espaçamento acima da legenda */
+    font-size: 1.2rem; /* Tamanho de fonte para legenda do perfil */
+    font-weight: 400; /* Peso normal de fonte */
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem; /* Diminui o título em telas menores */
+    }
+    .profiles {
+        gap: 1rem; /* Reduz o espaço entre perfis */
+    }
+    img {
+        width: 100px; /* Reduz a largura da imagem em dispositivos pequenos */
+        height: 100px; /* Reduz a altura da imagem em dispositivos pequenos */
+    }
+}
