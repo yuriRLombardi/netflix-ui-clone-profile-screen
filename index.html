@@ -1,48 +1,67 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Netflix</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <main>
-            <h1>Quem está assistindo?</h1>
-            <section aria-label="Perfis disponíveis">
-                <nav class="profiles">
-                    <a href="#" class="profile">
-                        <figure>
-                            <img src="/assets/perfil-1.png" alt="Um homem melancólico de estética vitoriana e gótica, vestindo trajes formais desgastados, posa em uma sala sombria iluminada por velas com uma escadaria curva ao fundo.">
-                            <figcaption>Gustavo</figcaption>
-                        </figure>
-                    </a>
-                    <a href="#" class="profile">
-                        <figure>
-                            <img src="/assets/perfil-2.png" alt="Imagem de um boné azul">
-                            <figcaption>Thiago</figcaption>
-                        </figure>
-                    </a>
-                    <a href="#" class="profile">
-                        <figure>
-                            <img src="/assets/perfil-3.jpg" alt="Uma criatura humanoide elemental feita de pedras escuras e fragmentos cristalinos, com chamas azuis ardentes no topo e em seu interior, e olhos brilhantes, é retratada em um cenário sombrio.">
-                            <figcaption>Kogeta Iwa</figcaption>
-                        </figure>
-                    </a>
-                    <a href="#" class="profile">
-                        <figure>
-                            <img src="/assets/perfil-4.png" alt="Uma imagem cinematográfica mostra uma criatura quadrúpede reptiliana com uma carapaça de rochas vulcânicas acidentadas e olhos vermelhos brilhantes, caminhando sobre um campo de lava endurecida em frente a um vulcão ativo sob um céu nublado e fumegante.">
-                            <figcaption>Vulcano</figcaption>
-                        </figure>
-                    </a>
-                    <a href="#" class="profile">
-                        <figure>
-                            <img src="/assets/perfil-5.png" alt="Uma fotografia de médio alcance de um homem vestindo um terno preto bem ajustado e uma máscara de Guy Fawkes (Anonymous), posando em um salão de baile luxuoso e decorado de forma opulenta, com casais dançando em trajes de gala ao fundo.">
-                            <figcaption>Vector</figcaption>
-                        </figure>
-                    </a>
-                </nav>
-            </section>
-        </main>
-    </body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <h1>Quem está assistindo?</h1>
+        <button id="theme-toggle" type="button" aria-label="Alternar modo claro/escuro"></button>
+        <section aria-label="Perfis disponíveis">
+            <nav>
+                <ul class="profiles">
+                    <li><a href="catalogo/catalogo.html" class="profile">
+                            <figure>
+                                <img src="/assets/perfil-1.png"
+                                    alt="Uma imagem de corpo inteiro de um druida de barba grisalha e cabelos compridos, sentado em um trono de pedra em uma clareira na floresta, cercado por uma variedade de animais selvagens, incluindo um urso pardo, um lobo, um cervo, uma raposa, um texugo, um esquilo e uma coruja, com antigas pedras rúnicas ao fundo..">
+                                <figcaption>Nathan</figcaption>
+                            </figure>
+                        </a></li>
+                    <li><a href="catalogo/catalogo.html" class="profile">
+                            <figure>
+                                <img src="/assets/perfil-2.png" alt="Uma elfa de orelhas pontudas e longos cabelos trançados, vestindo uma túnica verde com um brasão de cruz dourada e uma capa puída, empunha um arco longo ornamentado e mira uma flecha em um campo aberto ao entardecer sob um céu crepuscular com uma lua crescente.">
+                                <figcaption>Elisa</figcaption>
+                            </figure>
+                        </a></li>
+                    <li><a href="catalogo/catalogo.html" class="profile">
+                            <figure>
+                                <img src="/assets/perfil-3.jpg"
+                                    alt="Uma criatura humanoide elemental feita de pedras escuras e fragmentos cristalinos, com chamas azuis ardentes no topo e em seu interior, e olhos brilhantes, é retratada em um cenário sombrio.">
+                                <figcaption>Kogeta Iwa</figcaption>
+                            </figure>
+                        </a></li>
+                    <li><a href="catalogo/catalogo.html" class="profile">
+                            <figure>
+                                <img src="/assets/perfil-4.png"
+                                    alt="Uma imagem cinematográfica mostra uma criatura quadrúpede reptiliana com uma carapaça de rochas vulcânicas acidentadas e olhos vermelhos brilhantes, caminhando sobre um campo de lava endurecida em frente a um vulcão ativo sob um céu nublado e fumegante.">
+                                <figcaption>Vulcano</figcaption>
+                            </figure>
+                        </a></li>
+                    <li><a href="catalogo/catalogo.html" class="profile">
+                            <figure>
+                                <img src="/assets/perfil-5.png"
+                                    alt="Uma fotografia de médio alcance de um homem vestindo um terno preto bem ajustado e uma máscara de Guy Fawkes (Anonymous), posando em um salão de baile luxuoso e decorado de forma opulenta, com casais dançando em trajes de gala ao fundo.">
+                                <figcaption>Vector</figcaption>
+                            </figure>
+                        </a></li>
+                        <li><a href="catalogo/catalogo.html" class="profile">
+                            <figure>
+                                <img src="/assets/perfil-6.png"
+                                    alt="Uma imagem de corpo inteiro de um paladino em armadura completa, segurando um martelo de batalha e um escudo com cruzes, emanando uma luz divina dourada e brilhante, contra um fundo de floresta de neve com runas antigas.">
+                                <figcaption>Ísaias</figcaption>
+                            </figure>
+                        </a></li>
+                </ul>
+            </nav>
+        </section>
+    </main>
+    <script src="js/index.js"></script>
+    <script src="js/theme.js"></script>
+</body>
+
 </html>
