@@ -1,81 +1,318 @@
 /* Estilos inspirados na Netflix */
 
+/* Variáveis CSS globais para temas (light/dark) */
+:root {
+    --background-color: #fff;
+    --text-color: #000;
+    --link-color: #000;
+    --profile-hover-border: #000;
+}
+
+/* Tema escuro: sobrescreve variáveis quando .dark-mode está presente em <body> */
+body.dark-mode {
+    --background-color: #000;
+    --text-color: #fff;
+    --link-color: #fff;
+    --profile-hover-border: #fff;
+}
+
+/* Tema claro: variável padrão explícita em .light-mode */
+body.light-mode {
+    --background-color: #fff;
+    --text-color: #000;
+    --link-color: #000;
+    --profile-hover-border: #000;
+}
+
+/* Estilo do botão toggle de tema no topo direito */
+#theme-toggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    width: 48px;
+    height: 28px;
+    border: none;
+    border-radius: 999px;
+    background: #ccc;
+    cursor: pointer;
+    padding: 3px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    transition: background 0.25s ease;
+}
+
+/* Bolinha interna do toggle que se move ao alternar tema */
+#theme-toggle::before {
+    content: '';
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #fff;
+    transform: translateX(0);
+    transition: transform 0.25s ease;
+}
+
+/* Cor de fundo do toggle em modo escuro */
+body.dark-mode #theme-toggle {
+    background: #4d4d4d;
+}
+
+body.dark-mode #theme-toggle::before {
+    transform: translateX(20px);
+}
+
+/* Estilo base do body usando variáveis de cor do tema */
 body {
-    background-color: #000; /* Fundo preto escuro típico da Netflix */
-    color: #fff; /* Texto branco para contrastar com o fundo escuro */
-    font-family: Arial, sans-serif; /* Fonte simples e legível */
-    margin: 0; /* Remove margens padrão do navegador */
-    padding: 0; /* Remove espaçamento interno padrão */
-    height: 100vh; /* Ocupa 100% da altura da viewport */
-    display: flex; /* Usa flexbox para centralizar conteúdo */
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
-    text-align: center; /* Centraliza o texto */
+    /* Fundo dinâmico de acordo com o tema */
+    background-color: var(--background-color);
+    /* Texto dinâmico de acordo com o tema */
+    color: var(--text-color);
+    /* Fonte simples e legível */
+    font-family: Arial, sans-serif;
+    /* Remove margens padrão do navegador */
+    margin: 0;
+    /* Remove espaçamento interno padrão */
+    padding: 0;
+    /* Ocupa 100% da altura da viewport */
+    height: 100vh;
+    /* Usa flexbox para centralizar conteúdo */
+    display: flex;
+    /* Centraliza horizontalmente */
+    justify-content: center;
+    /* Centraliza verticalmente */
+    align-items: center;
+    /* Centraliza o texto */
+    text-align: center;
 }
 
 main {
-    max-width: 800px; /* Limita a largura máxima do conteúdo */
-    width: 100%; /* Ocupa toda largura disponível até o limite */
-    padding: 20px; /* Espaçamento interno ao redor do conteúdo */
+    /* Limita a largura máxima do conteúdo */
+    max-width: 800px;
+    /* Ocupa toda largura disponível até o limite */
+    width: 100%;
+    /* Espaçamento interno ao redor do conteúdo */
+    padding: 20px;
 }
 
 h1 {
-    font-size: 3rem; /* Tamanho grande de título */
-    margin-bottom: 2rem; /* Espaçamento abaixo do título */
-    font-weight: 300; /* Peso de fonte leve para estética moderna */
+    /* Tamanho grande de título */
+    font-size: 3rem;
+    /* Espaçamento abaixo do título */
+    margin-bottom: 2rem;
+    /* Peso de fonte leve para estética moderna */
+    font-weight: 300;
 }
 
 .profiles {
-    display: flex; /* Layout flexível para exibir perfis em linha */
-    justify-content: center; /* Centraliza os itens no container */
-    gap: 2rem; /* Espaço uniforme entre os perfis */
-    flex-wrap: wrap; /* Permite quebra de linha em telas menores */
+    /* Layout flexível para exibir perfis em linha */
+    display: flex;
+    /* Centraliza os itens no container */
+    justify-content: center;
+    /* Espaço uniforme entre os perfis */
+    gap: 2rem;
+    /* Permite quebra de linha em telas menores */
+    flex-wrap: wrap;
+    /* Remove marcadores de lista */
+    list-style: none;
+    /* Remove margem padrão */
+    margin: 0;
+    /* Remove padding padrão */
+    padding: 0;
 }
 
 .profile {
-    text-decoration: none; /* Remove sublinhado do link */
-    color: #fff; /* Garante texto branco no link */
-    transition: transform 0.3s ease; /* Animação suave ao aplicar transformações */
-    display: block; /* Garante comportamento de bloco para área clicável */
+    /* Remove sublinhado do link */
+    text-decoration: none;
+    /* Garante texto de link de acordo com o tema */
+    color: var(--link-color);
+    /* Animação suave ao aplicar transformações */
+    transition: transform 0.3s ease;
+    /* Garante comportamento de bloco para área clicável */
+    display: block;
 }
 
 .profile:hover {
-    transform: scale(1.1); /* Aumenta ligeiramente o perfil ao passar o mouse */
+    transform: scale(1.1);
+    /* Aumenta ligeiramente o perfil ao passar o mouse */
 }
 
 figure {
-    margin: 0; /* Remove margens padrão do elemento figure */
+    /* Remove margens padrão do elemento figure */
+    margin: 0;
 }
 
 img {
-    width: 120px; /* Largura fixa da imagem de perfil */
-    height: 120px; /* Altura fixa da imagem de perfil */
-    border-radius: 50%; /* Deixa a imagem em formato circular */
-    object-fit: cover; /* Corta e ajusta a imagem para preencher o container */
-    border: 3px solid transparent; /* Cria borda invisível inicial para animação */
-    transition: border-color 0.3s ease; /* Suaviza mudança de cor da borda */
+    /* Largura fixa da imagem de perfil */
+    width: 120px;
+    /* Altura fixa da imagem de perfil */
+    height: 120px;
+    /* Corta e ajusta a imagem para preencher o container */
+    object-fit: cover;
+    /* Cria borda invisível inicial para animação */
+    border: 3px solid transparent;
+    /* Suaviza mudança de cor da borda */
+    transition: border-color 0.3s ease;
 }
 
 .profile:hover img {
-    border-color: #fff; /* Borda branca ao passar o mouse */
+    border-color: var(--profile-hover-border);
+    /* Borda de acordo com o tema */
 }
 
 figcaption {
-    margin-top: 0.5rem; /* Espaçamento acima da legenda */
-    font-size: 1.2rem; /* Tamanho de fonte para legenda do perfil */
-    font-weight: 400; /* Peso normal de fonte */
+    margin-top: 0.5rem;
+    /* Espaçamento acima da legenda */
+    font-size: 1.2rem;
+    /* Tamanho de fonte para legenda do perfil */
+    font-weight: 400;
+    /* Peso normal de fonte */
 }
 
 /* Responsividade */
 @media (max-width: 600px) {
     h1 {
-        font-size: 2rem; /* Diminui o título em telas menores */
+        /* Diminui o título em telas menores */
+        font-size: 2rem;
     }
+
     .profiles {
-        gap: 1rem; /* Reduz o espaço entre perfis */
+        /* Reduz o espaço entre perfis */
+        gap: 1rem;
     }
+
+    .profiles li {
+        /* Agrupa de 3 a 3 */
+        flex: 0 0 calc(33.333% - 0.666rem);
+    }
+
     img {
-        width: 100px; /* Reduz a largura da imagem em dispositivos pequenos */
-        height: 100px; /* Reduz a altura da imagem em dispositivos pequenos */
+        /* Reduz a largura da imagem em dispositivos pequenos */
+        width: 100px;
+        /* Reduz a altura da imagem em dispositivos pequenos */
+        height: 100px;
+    }
+}
+
+/* Responsividade para dispositivos móveis pequenos (até 480px) */
+@media (max-width: 480px) {
+    main {
+        /* Reduz o padding em telas muito pequenas */
+        padding: 10px;
+    }
+
+    h1 {
+        /* Título ainda menor para móveis */
+        font-size: 1.5rem;
+        /* Ajusta margem */
+        margin-bottom: 1.5rem;
+    }
+
+    .profiles {
+        /* Espaço menor entre perfis */
+        gap: 0.5rem;
+        /* Distribui melhor em telas pequenas */
+        justify-content: space-around;
+    }
+
+    .profiles li {
+        /* Agrupa de 3 a 3 em telas pequenas */
+        flex: 0 0 calc(33.333% - 0.333rem);
+    }
+
+    img {
+        /* Imagens menores */
+        width: 80px;
+        height: 80px;
+    }
+
+    figcaption {
+        /* Fonte menor para legendas */
+        font-size: 1rem;
+    }
+}
+
+/* Responsividade para tablets (481px a 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    main {
+        /* Ajusta largura máxima */
+        max-width: 700px;
+        /* Espaçamento interno um pouco menor */
+        padding: 15px;
+    }
+
+    h1 {
+        /* Tamanho intermediário */
+        font-size: 2.5rem;
+    }
+
+    .profiles {
+        /* Gap intermediário */
+        gap: 1.5rem;
+    }
+
+    .profiles li {
+        /* Agrupa de 3 a 3 */
+        flex: 0 0 calc(33.333% - 1rem);
+    }
+
+    img {
+        /* Tamanho intermediário para imagens */
+        width: 110px;
+        height: 110px;
+    }
+}
+
+/* Responsividade para desktops pequenos (769px a 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    main {
+        /* Aumenta um pouco a largura */
+        max-width: 900px;
+    }
+
+    h1 {
+        /* Levemente maior */
+        font-size: 3.2rem;
+    }
+
+    .profiles {
+        /* Gap maior */
+        gap: 2.5rem;
+        /* Começa cada linha da esquerda em vez de centralizar linhas incompletas */
+        justify-content: flex-start;
+        align-content: flex-start;
+    }
+
+    img {
+        width: 130px;
+        /* Imagens maiores */
+        height: 130px;
+    }
+}
+
+/* Responsividade para telas grandes (acima de 1024px) */
+@media (min-width: 1025px) {
+    main {
+        /* Largura maior para telas grandes */
+        max-width: 1200px;
+    }
+
+    h1 {
+        /* Título maior */
+        font-size: 3.5rem;
+    }
+
+    .profiles {
+        /* Gap ainda maior */
+        gap: 3rem;
+        /* Começa cada linha da esquerda em vez de centralizar linhas incompletas */
+        justify-content: flex-start;
+        align-content: flex-start;
+    }
+
+    img {
+        /* Imagens maiores */
+        width: 150px;
+        height: 150px;
     }
 }
