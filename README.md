@@ -86,7 +86,14 @@ git clone <repo>
 cd netflix-ui-clone
 ```
 Abra o arquivo index.html no navegador.
+---
+## 📈 Melhorias Futuras
 
+- Adicionar navegação entre páginas
+- Integração com API de filmes
+- Implementar autenticação simulada
+- Melhorar interatividade
+---
 ## 👨‍💻 Autor
 
 Yuri Rodrigues Lombardi
