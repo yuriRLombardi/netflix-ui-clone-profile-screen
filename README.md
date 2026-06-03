@@ -22,7 +22,8 @@ Projeto desenvolvido individualmente durante a Imersão Front-End com IA da Alur
 
 ---
 
-## 🔗 Demo: https://yurirlombardi.github.io/netflix-ui-clone-profile-screen/
+### 🔗 Demo: https://yurirlombardi.github.io/netflix-ui-clone-profile-screen/
+
 ---
 
 ## 🎯 Objetivo
